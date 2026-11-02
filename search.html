@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cari Kuliner - Weekend Go</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+    <a href="index.html" class="back-link">Kembali</a>
+    <h1>Mau cari apa?</h1>
+
+    <div class="tabs">
+      <button type="button" class="tab active" data-category="food">Makanan</button>
+      <button type="button" class="tab" data-category="drink">Minuman</button>
+      <button type="button" class="tab" data-category="dessert">Dessert</button>
+    </div>
+
+    <form id="search-form">
+      <label for="city">Kota</label>
+      <select id="city">
+        <option value="depok" selected>Depok</option>
+        <option value="bogor" disabled>Bogor (segera hadir)</option>
+        <option value="jakarta" disabled>Jakarta (segera hadir)</option>
+        <option value="bekasi" disabled>Bekasi (segera hadir)</option>
+      </select>
+
+      <label for="area">Area</label>
+      <select id="area">
+        <option value="all">Semua area</option>
+        <option value="margonda">Margonda</option>
+        <option value="beji">Beji</option>
+        <option value="kukusan">Kukusan / sekitar UI</option>
+        <option value="sawangan">Sawangan</option>
+        <option value="cinere">Cinere</option>
+        <option value="cimanggis">Cimanggis</option>
+      </select>
+
+      <label for="keyword">Cari menu (opsional)</label>
+      <input type="text" id="keyword" placeholder="Contoh: ketoprak, bakso, kopi susu">
+
+      <button type="submit">Cari</button>
+    </form>
+    <section id="results"></section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
