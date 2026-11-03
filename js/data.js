@@ -65,7 +65,7 @@ const places = [
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mansae+Korean+Grill+Depok",
     notes: "Ruko ITC Depok, Jl. Margonda Raya No.18. Cocok teman"
   },
-  {
+    {
     id: 7,
     name: "Saung Talaga",
     city: "depok",
@@ -74,7 +74,19 @@ const places = [
     priceMin: 32000,
     priceMax: 57000,
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Saung+Talaga+Sawangan+Depok",
-    notes: "Jl. Raya Sawangan No.1. Cocok keluarga"
+    notes: "Jl. Raya Sawangan No.1. Cocok untuk keluarga",
+    address: "Jl. Raya Sawangan No.1, Rangkapan Jaya, Pancoran Mas",
+    openHours: "",
+    facilities: [],
+    whatsapp: "",
+    instagram: "",
+    tiktok: "",
+    priceCheckedAt: "",
+        photos: [
+      "assets/images/places/saung-talaga-1.jpg",
+      "assets/images/places/saung-talaga-2.jpg",
+      "assets/images/places/saung-talaga-3.jpg"
+    ]
   },
   {
     id: 8,

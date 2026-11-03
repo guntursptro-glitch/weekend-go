@@ -33,6 +33,10 @@ function renderResults(list) {
 
   resultsContainer.innerHTML = list
     .map(function (place) {
+      const detailLink = place.address
+        ? `<a href="detail.html?id=${place.id}" class="detail-link">Lihat detail</a>`
+        : '';
+
       return `
         <article class="place-card">
           <h2>${place.name}</h2>
@@ -41,7 +45,10 @@ function renderResults(list) {
             ${formatRupiah(place.priceMin)} - ${formatRupiah(place.priceMax)}
             <small>per orang</small>
           </p>
-          <a href="${place.mapsUrl}" target="_blank" rel="noopener">Buka di Google Maps</a>
+          <div class="card-links">
+            ${detailLink}
+            <a href="${place.mapsUrl}" target="_blank" rel="noopener">Buka di Google Maps</a>
+          </div>
         </article>
       `;
     })
