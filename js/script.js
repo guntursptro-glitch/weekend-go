@@ -1,6 +1,8 @@
 const form = document.getElementById('search-form');
 const resultsContainer = document.getElementById('results');
 
+const STORAGE_KEY = 'weekendgo-last-search';
+
 function formatRupiah(number) {
   return 'Rp' + number.toLocaleString('id-ID');
 }
@@ -59,10 +61,49 @@ function showResults() {
   renderResults(searchPlaces());
 }
 
+function saveSearch() {
+  const data = {
+    city: document.getElementById('city').value,
+    area: document.getElementById('area').value,
+    keyword: document.getElementById('keyword').value
+  };
+
+  try {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch (error) {
+    // Penyimpanan tidak tersedia, abaikan saja
+  }
+}
+
+function restoreSearch() {
+  try {
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    if (!saved) return false;
+
+    const data = JSON.parse(saved);
+    document.getElementById('city').value = data.city;
+    document.getElementById('area').value = data.area;
+    document.getElementById('keyword').value = data.keyword;
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
 if (form) {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+    saveSearch();
     showResults();
   });
 
+  if (restoreSearch()) {
+    showResults();
+  }
+} else {
+  try {
+    sessionStorage.removeItem(STORAGE_KEY);
+  } catch (error) {
+    // Abaikan
+  }
 }
