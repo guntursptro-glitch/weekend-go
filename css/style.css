@@ -404,6 +404,7 @@ h1 {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.9);
+  touch-action: pan-y;
 }
 
 .lightbox[hidden] {

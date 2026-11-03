@@ -73,6 +73,32 @@ function setupLightbox(photos, placeName, track) {
     if (event.key === 'Escape') close();
     if (event.key === 'ArrowLeft' && photos.length > 1) show(index - 1);
     if (event.key === 'ArrowRight' && photos.length > 1) show(index + 1);
+      let touchStartX = 0;
+  let touchStartY = 0;
+
+  box.addEventListener(
+    'touchstart',
+    function (event) {
+      touchStartX = event.changedTouches[0].clientX;
+      touchStartY = event.changedTouches[0].clientY;
+    },
+    { passive: true }
+  );
+
+  box.addEventListener(
+    'touchend',
+    function (event) {
+      if (photos.length < 2) return;
+
+      const diffX = event.changedTouches[0].clientX - touchStartX;
+      const diffY = event.changedTouches[0].clientY - touchStartY;
+
+      if (Math.abs(diffX) < 50 || Math.abs(diffX) < Math.abs(diffY)) return;
+
+      show(diffX < 0 ? index + 1 : index - 1);
+    },
+    { passive: true }
+  );
   });
 }
 
