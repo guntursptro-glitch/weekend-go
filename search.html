@@ -9,13 +9,7 @@
 <body>
     <main>
     <a href="index.html" class="back-link">Kembali</a>
-    <h1>Mau cari apa?</h1>
-
-    <div class="tabs">
-      <button type="button" class="tab active" data-category="food">Makanan</button>
-      <button type="button" class="tab" data-category="drink">Minuman</button>
-      <button type="button" class="tab" data-category="dessert">Dessert</button>
-    </div>
+    <h1>Mau makan di mana?</h1>
 
     <form id="search-form">
       <label for="city">Kota</label>
@@ -27,14 +21,19 @@
       </select>
 
       <label for="area">Area</label>
-      <select id="area">
+        <select id="area">
         <option value="all">Semua area</option>
-        <option value="margonda">Margonda</option>
         <option value="beji">Beji</option>
-        <option value="kukusan">Kukusan / sekitar UI</option>
-        <option value="sawangan">Sawangan</option>
-        <option value="cinere">Cinere</option>
+        <option value="pancoran-mas">Pancoran Mas</option>
+        <option value="cipayung" disabled>Cipayung (segera hadir)</option>
+        <option value="sukmajaya">Sukmajaya</option>
         <option value="cimanggis">Cimanggis</option>
+        <option value="cilodong" disabled>Cilodong (segera hadir)</option>
+        <option value="tapos" disabled>Tapos (segera hadir)</option>
+        <option value="cinere" disabled>Cinere (segera hadir)</option>
+        <option value="limo">Limo</option>
+        <option value="sawangan">Sawangan</option>
+        <option value="bojongsari">Bojongsari</option>
       </select>
 
       <label for="keyword">Cari menu (opsional)</label>
@@ -42,7 +41,10 @@
 
       <button type="submit">Cari</button>
     </form>
-    <section id="results"></section>
+    
+    <section id="results">
+    <p class="empty">Pilih area atau ketik menu, lalu klik Cari.</p>
+    </section>
   </main>
 
   <script src="js/data.js"></script>

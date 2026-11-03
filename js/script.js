@@ -1,8 +1,5 @@
-const tabs = document.querySelectorAll('.tab');
 const form = document.getElementById('search-form');
 const resultsContainer = document.getElementById('results');
-
-let selectedCategory = 'food';
 
 function formatRupiah(number) {
   return 'Rp' + number.toLocaleString('id-ID');
@@ -15,7 +12,6 @@ function searchPlaces() {
 
   return places.filter(function (place) {
     const matchCity = place.city === city;
-    const matchCategory = place.categories.includes(selectedCategory);
     const matchArea = area === 'all' || place.area === area;
     const matchKeyword =
       keyword === '' ||
@@ -24,7 +20,7 @@ function searchPlaces() {
         return tag.includes(keyword);
       });
 
-    return matchCity && matchCategory && matchArea && matchKeyword;
+    return matchCity && matchArea && matchKeyword;
   });
 }
 
@@ -40,7 +36,7 @@ function renderResults(list) {
       return `
         <article class="place-card">
           <h2>${place.name}</h2>
-          <p class="place-meta">${place.area}</p>
+          <p class="place-meta">${place.area.replace('-', ' ')}</p>
           <p class="place-price">
             ${formatRupiah(place.priceMin)} - ${formatRupiah(place.priceMax)}
             <small>per orang</small>
@@ -56,23 +52,10 @@ function showResults() {
   renderResults(searchPlaces());
 }
 
-tabs.forEach(function (tab) {
-  tab.addEventListener('click', function () {
-    tabs.forEach(function (t) {
-      t.classList.remove('active');
-    });
-
-    tab.classList.add('active');
-    selectedCategory = tab.dataset.category;
-    showResults();
-  });
-});
-
 if (form) {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     showResults();
   });
 
-  showResults();
 }

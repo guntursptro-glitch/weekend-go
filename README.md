@@ -7,7 +7,9 @@ pada kuliner di Depok, dengan pencarian berdasarkan kategori, area, dan kata kun
 HTML, CSS, JavaScript
 
 ## Status
-Dalam pengembangan. Data tempat saat ini masih contoh.
+## Status
+Dalam pengembangan. Data awal mencakup 15 tempat makan di beberapa kecamatan Depok
+(Beji dan Pancoran Mas paling lengkap). Harga dan alamat masih perlu diverifikasi.
 
 ## Kredit foto
 - Staycation: Valeriia Bugaiova di Unsplash
