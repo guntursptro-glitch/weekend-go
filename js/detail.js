@@ -179,7 +179,11 @@ if (!place) {
   const social = [];
   if (place.instagram) social.push('Instagram: ' + place.instagram);
   if (place.tiktok) social.push('TikTok: ' + place.tiktok);
-  setText('place-social', social.join(' · '));
+  if (social.length === 0 && place.noSocial) {
+    document.getElementById('place-social').textContent = 'Tidak ada akun media sosial';
+  } else {
+    setText('place-social', social.join(' · '));
+  }
 
   document.getElementById('maps-link').href = place.mapsUrl;
 

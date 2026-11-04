@@ -65,24 +65,32 @@ const places = [
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mansae+Korean+Grill+Depok",
     notes: "Ruko ITC Depok, Jl. Margonda Raya No.18. Cocok teman"
   },
-    {
+      {
     id: 7,
     name: "Saung Talaga",
     city: "depok",
     area: "pancoran-mas",
     tags: ["sunda", "lesehan", "pecak ikan", "gurame"],
-    priceMin: 32000,
-    priceMax: 57000,
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Saung+Talaga+Sawangan+Depok",
-    notes: "Jl. Raya Sawangan No.1. Cocok untuk keluarga",
+    priceMin: 25000,
+    priceMax: 125000,
+    mapsUrl: "https://maps.app.goo.gl/BahbXRedi2c3J12H6",
+    notes: "Jl. Raya Sawangan No.1. Cocok keluarga",
     address: "Jl. Raya Sawangan No.1, Rangkapan Jaya, Pancoran Mas",
-    openHours: "",
-    facilities: [],
-    whatsapp: "",
+    openHours: "Setiap hari, 10.00-20.30",
+    facilities: [
+      "Playground",
+      "Live music",
+      "Mancing (berbayar)",
+      "Musholla",
+      "Toilet",
+      "Naik perahu (berbayar)"
+    ],
+    whatsapp: "6281380165357",
     instagram: "",
     tiktok: "",
-    priceCheckedAt: "",
-        photos: [
+    noSocial: true,
+    priceCheckedAt: "November 2026",
+    photos: [
       "assets/images/places/saung-talaga-1.jpg",
       "assets/images/places/saung-talaga-2.jpg",
       "assets/images/places/saung-talaga-3.jpg"
@@ -175,5 +183,38 @@ const places = [
     priceMax: 70000,
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Park+Sawangan",
     notes: "Jl. Raya Parung-Ciputat No.1, Serua. Cocok keluarga"
+  },
+    {
+    id: 16,
+    name: "Saji Resto & Cafe",
+    city: "depok",
+    area: "cipayung",
+    tags: ["jepang", "western", "nusantara", "kopi", "kafe"],
+    priceMin: 25000,
+    priceMax: 100000,
+    mapsUrl: "https://maps.app.goo.gl/xDjd8U7z1XAVnwRy8",
+    notes: "Gg. Widuri No.107, Pd. Jaya, Kec. Cipayung, Kota Depok, Jawa Barat 16438. Cocok teman, pasangan, keluarga"
+  },
+  {
+    id: 17,
+    name: "RM Kahuma Sunda",
+    city: "depok",
+    area: "cipayung",
+    tags: ["khas sunda", "prasmanan", "sambal gratis", "lalapan gratis", "nila bakar", "ayam goreng", "rooftop"],
+    priceMin: 25000,
+    priceMax: 75000,
+    mapsUrl: "https://maps.app.goo.gl/mGFCKt5m1SwrtDSc7",
+    notes: "Jl. Raya Citayam No.19, RT.05/RW.06, Ratu Jaya, Kec. Cipayung, Kota Depok, Jawa Barat 16436. Cocok keluarga"
+  },
+  {
+    id: 18,
+    name: "Waroeng Abah",
+    city: "depok",
+    area: "cipayung",
+    tags: ["seblak", "es durian"],
+    priceMin: 5000,
+    priceMax: 30000,
+    mapsUrl: "https://maps.app.goo.gl/JgsoeN3zRuDAUTff7",
+    notes: "Jl. Raya Cipayung, Cipayung, Kec. Cipayung, Kota Depok, Jawa Barat 16437. Cocok teman, pasangan"
   }
 ];
