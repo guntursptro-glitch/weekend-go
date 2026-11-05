@@ -11,9 +11,9 @@
     <a href="index.html" class="back-link">Kembali</a>
     <h1>Mau makan di mana?</h1>
 
-    <form id="search-form">
+    <form id="search-form" action="results.html" method="get">
       <label for="city">Kota</label>
-      <select id="city">
+      <select id="city" name="city">
         <option value="depok" selected>Depok</option>
         <option value="bogor" disabled>Bogor (segera hadir)</option>
         <option value="jakarta" disabled>Jakarta (segera hadir)</option>
@@ -21,7 +21,7 @@
       </select>
 
       <label for="area">Area</label>
-        <select id="area">
+        <select id="area" name="area">
         <option value="all">Semua area</option>
         <option value="beji">Beji</option>
         <option value="pancoran-mas">Pancoran Mas</option>
@@ -37,17 +37,11 @@
       </select>
 
       <label for="keyword">Cari menu (opsional)</label>
-      <input type="text" id="keyword" placeholder="Contoh: ketoprak, bakso, kopi susu">
+      <input type="text" id="keyword" name="keyword" placeholder="Contoh: ketoprak, bakso, kopi susu">
 
       <button type="submit">Cari</button>
     </form>
-
-    <section id="results">
-    <p class="empty">Pilih area atau ketik menu, lalu klik Cari.</p>
-    </section>
   </main>
 
-  <script src="js/data.js"></script>
-  <script src="js/script.js"></script>
 </body>
 </html>

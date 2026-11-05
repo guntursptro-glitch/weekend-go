@@ -196,3 +196,12 @@ if (!place) {
 
   setupSlider(place.photos || [], place.name);
 }
+
+document.addEventListener('click', function (event) {
+  const link = event.target.closest('.back-link');
+
+  if (link && window.history.length > 1) {
+    event.preventDefault();
+    window.history.back();
+  }
+});
