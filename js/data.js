@@ -216,5 +216,27 @@ const places = [
     priceMax: 30000,
     mapsUrl: "https://maps.app.goo.gl/JgsoeN3zRuDAUTff7",
     notes: "Jl. Raya Cipayung, Cipayung, Kec. Cipayung, Kota Depok, Jawa Barat 16437. Cocok teman, pasangan"
+  },
+    {
+    id: 19,
+    name: "Saung Cobek Medan Sunda",
+    city: "depok",
+    area: "cipayung",
+    tags: ["mie", "snack", "sunda"],
+    priceMin: 25000,
+    priceMax: 50000,
+    mapsUrl: "https://maps.app.goo.gl/QozoPsf3ieks4xwA7",
+    notes: "Jl. Bonang Raya No.1, RT.1/RW.3, Cipayung, Kec. Cipayung, Kota Depok, Jawa Barat 16442. Cocok teman, pasangan, keluarga"
+  },
+  {
+    id: 20,
+    name: "Pondok Taraso Cipayung",
+    city: "depok",
+    area: "cipayung",
+    tags: ["nasi padang"],
+    priceMin: 25000,
+    priceMax: 50000,
+    mapsUrl: "https://maps.app.goo.gl/zB1xTnr8eHtDJYoY8",
+    notes: "Jl. Bonang Raya, Cipayung, Kec. Cipayung, Kota Depok, Jawa Barat 16437. Cocok keluarga"
   }
 ];
