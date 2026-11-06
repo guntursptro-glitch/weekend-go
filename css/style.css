@@ -595,3 +595,42 @@ main.home {
   position: relative;
   z-index: 1;
 }
+
+/* ===== Foto menu di halaman detail ===== */
+
+.menu-photos {
+  margin-top: 24px;
+}
+
+.menu-photos[hidden] {
+  display: none;
+}
+
+.menu-photos h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.menu-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #EFE2D0;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  cursor: zoom-in;
+}
+
+.menu-grid .slide {
+  display: block;
+  flex: none;
+  height: auto;
+  background: none;
+}

@@ -22,6 +22,7 @@ function setupLightbox(photos, placeName, track) {
   const count = document.getElementById('lightbox-count');
 
   let index = 0;
+  let isActive = false;
 
   function show(newIndex) {
     index = (newIndex + photos.length) % photos.length;
@@ -31,21 +32,23 @@ function setupLightbox(photos, placeName, track) {
   }
 
   function open(startIndex) {
+    isActive = true;
+
+    const hasMany = photos.length > 1;
+    prevBtn.style.display = hasMany ? '' : 'none';
+    nextBtn.style.display = hasMany ? '' : 'none';
+    count.style.display = hasMany ? '' : 'none';
+
     show(startIndex);
     box.hidden = false;
     document.body.style.overflow = 'hidden';
   }
 
   function close() {
+    isActive = false;
     box.hidden = true;
     document.body.style.overflow = '';
     track.scrollLeft = index * track.clientWidth;
-  }
-
-  if (photos.length === 1) {
-    prevBtn.style.display = 'none';
-    nextBtn.style.display = 'none';
-    count.style.display = 'none';
   }
 
   track.addEventListener('click', function (event) {
@@ -54,26 +57,30 @@ function setupLightbox(photos, placeName, track) {
     open(Array.from(track.children).indexOf(slide));
   });
 
-  closeBtn.addEventListener('click', close);
+  closeBtn.addEventListener('click', function () {
+    if (isActive) close();
+  });
 
   box.addEventListener('click', function (event) {
-    if (event.target === box) close();
+    if (isActive && event.target === box) close();
   });
 
   prevBtn.addEventListener('click', function () {
-    show(index - 1);
+    if (isActive) show(index - 1);
   });
 
   nextBtn.addEventListener('click', function () {
-    show(index + 1);
+    if (isActive) show(index + 1);
   });
 
   document.addEventListener('keydown', function (event) {
-    if (box.hidden) return;
+    if (!isActive || box.hidden) return;
     if (event.key === 'Escape') close();
     if (event.key === 'ArrowLeft' && photos.length > 1) show(index - 1);
     if (event.key === 'ArrowRight' && photos.length > 1) show(index + 1);
-      let touchStartX = 0;
+  });
+
+  let touchStartX = 0;
   let touchStartY = 0;
 
   box.addEventListener(
@@ -88,7 +95,7 @@ function setupLightbox(photos, placeName, track) {
   box.addEventListener(
     'touchend',
     function (event) {
-      if (photos.length < 2) return;
+      if (!isActive || photos.length < 2) return;
 
       const diffX = event.changedTouches[0].clientX - touchStartX;
       const diffY = event.changedTouches[0].clientY - touchStartY;
@@ -99,7 +106,22 @@ function setupLightbox(photos, placeName, track) {
     },
     { passive: true }
   );
-  });
+}
+
+function setupMenuPhotos(menuPhotos, placeName) {
+  const section = document.getElementById('menu-photos');
+  const grid = document.getElementById('menu-grid');
+
+  if (menuPhotos.length === 0) return;
+
+  grid.innerHTML = menuPhotos
+    .map(function (src, index) {
+            return `<div class="slide"><img src="${src}" alt="Menu ${placeName} ${index + 1}" loading="lazy"></div>`;
+    })
+    .join('');
+
+  section.hidden = false;
+  setupLightbox(menuPhotos, 'Menu ' + placeName, grid);
 }
 
 function setupSlider(photos, placeName) {
@@ -195,6 +217,7 @@ if (!place) {
   }
 
   setupSlider(place.photos || [], place.name);
+  setupMenuPhotos(place.menuPhotos || [], place.name);
 }
 
 document.addEventListener('click', function (event) {

@@ -94,7 +94,10 @@ const places = [
       "assets/images/places/saung-talaga-1.jpg",
       "assets/images/places/saung-talaga-2.jpg",
       "assets/images/places/saung-talaga-3.jpg"
-    ]
+    ],
+    menuPhotos: [
+  "assets/images/places/saung-talaga-menu-1.webp"
+],
   },
   {
     id: 8,
