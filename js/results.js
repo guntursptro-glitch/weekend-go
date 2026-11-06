@@ -60,9 +60,9 @@ function renderResults(list) {
         })
         .join('');
 
-      const detailButton = place.address
-        ? `<a href="detail.html?id=${place.id}" class="btn btn-primary btn-small card-link">Lihat detail</a>`
-        : '';
+            const actionButton = place.address
+        ? `<a href="detail.html?id=${place.id}" class="btn btn-primary btn-small">Lihat detail</a>`
+        : `<a href="${place.mapsUrl}" class="btn btn-outline btn-small" target="_blank" rel="noopener">Buka Maps</a>`;
 
       return `
         <article class="place-card">
@@ -78,9 +78,8 @@ function renderResults(list) {
               <div class="chips">${chips}</div>
             </div>
           </div>
-          <div class="card-actions">
-            ${detailButton}
-            <a href="${place.mapsUrl}" class="btn btn-outline btn-small" target="_blank" rel="noopener">Buka Maps</a>
+                    <div class="card-actions">
+            ${actionButton}
           </div>
         </article>
       `;
