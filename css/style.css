@@ -40,12 +40,12 @@ h1 {
 
 .hero {
   position: relative;
-  max-width: 480px;
+  max-width: 440px;
   height: 270px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 0 0 28px 28px;
-  background: url("../assets/images/food.jpg") center / cover;
+  background: url("../assets/images/calender.jpg") center / cover;
 }
 
 .hero-text {

@@ -38,6 +38,7 @@ function setupLightbox(photos, placeName, track) {
     prevBtn.style.display = hasMany ? '' : 'none';
     nextBtn.style.display = hasMany ? '' : 'none';
     count.style.display = hasMany ? '' : 'none';
+    box.style.touchAction = hasMany ? 'pan-y pinch-zoom' : 'auto';
 
     show(startIndex);
     box.hidden = false;
