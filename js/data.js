@@ -47,23 +47,32 @@ const places = [
     id: 5,
     name: "Shabu Hachi",
     city: "depok",
-    area: "beji",
+    area: "pancoran-mas",
     tags: ["shabu", "all you can eat", "jepang"],
     priceMin: 158000,
-    priceMax: 200000,
+    priceMax: 368000,
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Shabu+Hachi+Margonda+Depok",
-    notes: "Jl. Margonda Raya No.2. Cocok keluarga"
-  },
-  {
-    id: 6,
-    name: "Mansae Korean Grill",
-    city: "depok",
-    area: "pancoran-mas",
-    tags: ["korean bbq", "all you can eat", "korea"],
-    priceMin: 99000,
-    priceMax: 99000, // TODO: cek harga maksimum di Maps
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mansae+Korean+Grill+Depok",
-    notes: "Ruko ITC Depok, Jl. Margonda Raya No.18. Cocok teman"
+        notes: "Jl. Margonda Raya No.2. Cocok keluarga. Harga paket shabu-shabu per orang, belum termasuk pajak 10% dan servis 5%. Tambah yakiniku Rp55.000 per orang",
+    address: "Jl. Margonda No.2, Depok, Pancoran Mas",
+    openHours: "Sen-Kam 11.00-21.00, Jum 11.00-22.00, Sab-Min 10.00-22.00",
+    facilities: [
+      "Musholla",
+      "Air mancur",
+      "Parkir berbayar",
+      "Menu halal"
+    ],
+    whatsapp: "6281263000057",
+    instagram: "@shabuhachi",
+    priceCheckedAt: "November 2026",
+    cardPhoto: "assets/images/shabu-hachi.webp",
+    photos: [
+      "assets/images/shabu-hachi-2.webp",
+      "assets/images/shabu-hachi-3.webp",
+      "assets/images/shabu-hachi-4.webp"
+    ],
+    menuPhotos: [
+  "assets/images/menu-shabu-hachi-lengkap.jpg"
+],
   },
       {
     id: 7,
@@ -108,7 +117,20 @@ const places = [
     priceMin: 30000,
     priceMax: 57000,
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Soto+Bu+Tjondro+Depok",
-    notes: "Jl. Siliwangi No.1. Cocok keluarga"
+    notes: "Jl. Siliwangi No.1. Cocok keluarga",
+    address: "Jl. Siliwangi No.1, Depok, Pancoran Mas",
+    openHours: "Setiap hari, 08.00-21.00",
+    facilities: [
+      "Area makan outdoor",
+      "Terima reservasi",
+      "Antar dan bawa pulang",
+      "Parkir berbayar"
+    ],
+    whatsapp: "",
+    instagram: "",
+    tiktok: "",
+    priceCheckedAt: "November 2026",
+    photos: []
   },
   {
     id: 9,
@@ -119,18 +141,20 @@ const places = [
     priceMin: 10000,
     priceMax: 32000,
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Sop+Durian+Margando+Depok",
-    notes: "Jl. Arif Rahman Hakim No.1. Cocok teman, pasangan"
-  },
-  {
-    id: 10,
-    name: "Kampung Kecil Depok Sawangan",
-    city: "depok",
-    area: "pancoran-mas",
-    tags: ["ayam bakar", "gurame", "iga penyet", "seafood"],
-    priceMin: 21500,
-    priceMax: 35000,
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kampung+Kecil+Depok+Sawangan",
-    notes: "Ruko Pancoran Mas, Jl. Raya Sawangan No.81. Cocok keluarga"
+    notes: "Jl. Arif Rahman Hakim No.1. Cocok teman, pasangan",
+    address: "Jl. Arif Rahman Hakim No.1, Depok, Pancoran Mas",
+    openHours: "Setiap hari, 10.00-24.00",
+    facilities: [
+      "Rooftop",
+      "Live music",
+      "Kursi bayi",
+      "Menu anak"
+    ],
+    whatsapp: "",
+    instagram: "",
+    tiktok: "",
+    priceCheckedAt: "November 2026",
+    photos: []
   },
   {
     id: 11,
@@ -241,5 +265,36 @@ const places = [
     priceMax: 50000,
     mapsUrl: "https://maps.app.goo.gl/zB1xTnr8eHtDJYoY8",
     notes: "Jl. Bonang Raya, Cipayung, Kec. Cipayung, Kota Depok, Jawa Barat 16437. Cocok keluarga"
+  },
+
+  {
+    id: 21,
+    name: "de'Clan Resto & Cafe",
+    city: "depok",
+    area: "pancoran-mas",
+    tags: ["western", "nusantara", "kafe", "pindang patin", "iga bakar"],
+    priceMin: 50000, // TODO: cek harga per orang di menu
+    priceMax: 125000, // TODO: cek harga per orang di menu
+    mapsUrl: "https://maps.google.com/maps?cid=9867623632253132983",
+    notes: "Jl. Tole Iskandar No.33. Cocok keluarga, teman",
+    address: "Jl. Tole Iskandar No.33, Depok, Pancoran Mas",
+    openHours: "Setiap hari, 08.00-22.00",
+    facilities: [
+      "Kolam ikan",
+      "Kandang burung besar",
+      "Live music",
+      "Musholla",
+      "Wi-Fi gratis",
+      "Kursi bayi",
+      "Toilet ramah kursi roda",
+      "Parkir luas",
+      "Menu halal"
+    ],
+    whatsapp: "",
+    instagram: "",
+    tiktok: "",
+    priceCheckedAt: "November 2026",
+    photos: []
   }
+
 ];

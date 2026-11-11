@@ -47,10 +47,10 @@ function renderResults(list) {
 
   const cards = sorted
     .map(function (place) {
-      const hasPhoto = place.photos && place.photos.length > 0;
+            const cardPhoto = place.cardPhoto || (place.photos && place.photos[0]);
 
-      const thumb = hasPhoto
-        ? `<img class="card-thumb" src="${place.photos[0]}" alt="${place.name}">`
+      const thumb = cardPhoto
+        ? `<img class="card-thumb" src="${cardPhoto}" alt="${place.name}">`
         : `<div class="card-thumb card-thumb-empty">${place.name.charAt(0)}</div>`;
 
       const chips = place.tags
