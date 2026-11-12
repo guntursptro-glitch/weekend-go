@@ -199,13 +199,21 @@ if (!place) {
   setText('place-phone', place.whatsapp || place.phone);
   setText('price-checked', place.priceCheckedAt);
 
-  const social = [];
-  if (place.instagram) social.push('Instagram: ' + place.instagram);
-  if (place.tiktok) social.push('TikTok: ' + place.tiktok);
+    const social = [];
+  if (place.instagram) {
+    const igName = place.instagram.replace('@', '');
+    social.push('<a href="https://www.instagram.com/' + igName + '/" target="_blank" rel="noopener">Instagram: ' + place.instagram + '</a>');
+  }
+  if (place.tiktok) {
+    const ttName = place.tiktok.replace('@', '');
+    social.push('<a href="https://www.tiktok.com/@' + ttName + '" target="_blank" rel="noopener">TikTok: ' + place.tiktok + '</a>');
+  }
   if (social.length === 0 && place.noSocial) {
     document.getElementById('place-social').textContent = 'Tidak ada akun media sosial';
+  } else if (social.length === 0) {
+    document.getElementById('place-social').textContent = 'Belum tersedia';
   } else {
-    setText('place-social', social.join(' · '));
+    document.getElementById('place-social').innerHTML = social.join(' · ');
   }
 
   document.getElementById('maps-link').href = place.mapsUrl;
