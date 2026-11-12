@@ -114,8 +114,8 @@ const places = [
     city: "depok",
     area: "pancoran-mas",
     tags: ["soto", "nasi", "sarapan"],
-    priceMin: 30000,
-    priceMax: 57000,
+    priceMin: 18000,
+    priceMax: 90000,
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Soto+Bu+Tjondro+Depok",
     notes: "Jl. Siliwangi No.1. Cocok keluarga",
     address: "Jl. Siliwangi No.1, Depok, Pancoran Mas",
@@ -126,11 +126,19 @@ const places = [
       "Antar dan bawa pulang",
       "Parkir berbayar"
     ],
-    whatsapp: "",
-    instagram: "",
-    tiktok: "",
+        phone: "(021) 7721 6161 (reservasi hanya lewat telepon)",
+    instagram: "@soto.butjondro",
     priceCheckedAt: "November 2026",
-    photos: []
+    cardPhoto: "assets/images/soto-1.jpg",
+    photos: [
+      "assets/images/soto-2.jpg",
+      "assets/images/soto-3.jpg",
+      "assets/images/soto-4.jpg"],
+    
+      menuPhotos: [
+  "assets/images/menu-soto.webp"
+],
+
   },
   {
     id: 9,

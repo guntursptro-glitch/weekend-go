@@ -196,7 +196,7 @@ if (!place) {
   setText('place-address', place.address);
   setText('place-hours', place.openHours);
   setText('place-facilities', (place.facilities || []).join(', '));
-  setText('place-phone', place.whatsapp);
+  setText('place-phone', place.whatsapp || place.phone);
   setText('price-checked', place.priceCheckedAt);
 
   const social = [];
@@ -217,6 +217,13 @@ if (!place) {
     waLink.style.display = 'none';
   }
 
+  const callLink = document.getElementById('call-link');
+  
+  if (place.phone) {
+    const digits = place.phone.replace(/\D/g, '');
+    callLink.href = 'tel:+62' + digits.replace(/^0/, '');
+    callLink.style.display = '';
+  }
   setupSlider(place.photos || [], place.name);
   setupMenuPhotos(place.menuPhotos || [], place.name);
 }
